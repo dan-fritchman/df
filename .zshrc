@@ -1,4 +1,11 @@
 
+bindkey -e
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward
+export PS1="%10F%m%f:%11F%1~%f \$ "
+##eval "$(starship init zsh)"
+
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/dan/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -13,4 +20,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+
+
 
