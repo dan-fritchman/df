@@ -4,7 +4,7 @@ echo $BANNER
 echo "# Loading ${HOME}/.bash_profile"
 echo $BANNER
 
-source .profile
+source ${HOME}/.profile
 
 # Terminal Prompt 
 # No idea how I figured how to do this 
