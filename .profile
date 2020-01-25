@@ -44,9 +44,7 @@ alias tmks='tmux kill-session -t '
 # Path Additions
 
 
-# Cargo
-export PATH="$HOME/.cargo/bin:$PATH"
-# NPM 
+# Cargo# NPM 
 export PATH=$PATH:${HOME}/.npm/bin/:${HOME}/.cargo/bin
 
 
@@ -55,3 +53,5 @@ export PATH=$PATH:${HOME}/.npm/bin/:${HOME}/.cargo/bin
 export HW21_SECRETS_FILE="${HOME}/HW21/dev/hw21/secrets.sh"
 
 
+
+export PATH="$HOME/.cargo/bin:$PATH"

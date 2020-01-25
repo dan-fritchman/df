@@ -1,4 +1,4 @@
 job1:
-  script: "python hello.py"
+  script: "ls -alh"
   
   

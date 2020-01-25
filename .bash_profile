@@ -33,3 +33,4 @@ if [ -f '/Users/dan/google-cloud-sdk/path.bash.inc' ]; then . '/Users/dan/google
 if [ -f '/Users/dan/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/dan/google-cloud-sdk/completion.bash.inc'; fi
 
 
+export PATH="$HOME/.cargo/bin:$PATH"
