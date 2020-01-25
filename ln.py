@@ -5,7 +5,7 @@ dotfiles = [
 	'.profile', 
 	'.zprofile',
 	'.zshrc',
-	'.bash_profile',
+	'.bashrc',
 	'.vimrc',
 ]
 dotfiles = [Path(d).absolute() for d in dotfiles]
