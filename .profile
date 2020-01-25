@@ -41,17 +41,12 @@ alias tmks='tmux kill-session -t '
 ##alias scrnAS   = 'screen -dRR '
 ##alias scrndRR  = 'scrnAS'
 
+
 # Path Additions
-
-
-# Cargo# NPM 
 export PATH=$PATH:${HOME}/.npm/bin/:${HOME}/.cargo/bin
 
 
-# Env
-
-export HW21_SECRETS_FILE="${HOME}/HW21/dev/hw21/secrets.sh"
-
+# Load local settings, if present
+[[ -e ~/.profile.local ]] && emulate sh -c 'source ~/.profile.local'
 
 
-export PATH="$HOME/.cargo/bin:$PATH"

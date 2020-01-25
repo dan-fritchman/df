@@ -1,4 +1,0 @@
-job1:
-  script: "ls -alh"
-  
-  
