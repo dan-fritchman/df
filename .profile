@@ -45,8 +45,8 @@ alias tmks='tmux kill-session -t '
 # Path Additions
 export PATH=$PATH:${HOME}/.npm/bin/:${HOME}/.cargo/bin
 
-
 # Load local settings, if present
-[[ -e ~/.profile.local ]] && emulate sh -c 'source ~/.profile.local'
+source $HOME/.profile.local 
+##[[ -e ~/.profile.local ]] && emulate sh -c 'source ~/.profile.local'
 
 

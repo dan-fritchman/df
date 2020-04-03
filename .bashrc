@@ -4,8 +4,6 @@ echo $BANNER
 echo "# Loading ${HOME}/.bash_profile"
 echo $BANNER
 
-source ${HOME}/.profile
-
 # Terminal Prompt 
 # No idea how I figured how to do this 
 export PS1="$(tput bold)[\h][\W]$(tput sgr0) $ "
@@ -32,5 +30,10 @@ if [ -f '/Users/dan/google-cloud-sdk/path.bash.inc' ]; then . '/Users/dan/google
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/dan/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/dan/google-cloud-sdk/completion.bash.inc'; fi
 
-
+# Rust/ Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Load shell-agnostic stuff
+source ${HOME}/.profile
+
+
