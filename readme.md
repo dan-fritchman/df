@@ -15,7 +15,7 @@ An attempt to share some dot-files
 * `git clone`
 * `python3 ln.py` will (forcibly) sym-link each dotfile into `$HOME`
 
-## Supportsed 
+## Supported 
 
 * bash
 * zsh
