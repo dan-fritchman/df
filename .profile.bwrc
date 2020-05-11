@@ -1,0 +1,28 @@
+
+# BWRC Machines Local Settings 
+
+# bsub/ lsf
+source /tools/support/lsf/conf/profile.lsf
+mybsubbash() { bsub -Is -XF -q interactive "$@" /bin/bash; }
+
+# RedHat DevTools
+source /opt/rh/devtoolset-8/enable
+
+# EDA Tools 
+export PATH=$PATH:/tools/synopsys/hspice/current/hspice/bin
+export PATH=$PATH:/tools/synopsys/vcs/current/bin
+export PATH=$PATH:/tools/synopsys/wv/current/bin
+
+# ChipYard Requirements
+# The real trick 
+# A mountain of other people's source-build shit 
+export PATH=/tools/designs/palmer.dabbelt/keep/redhat-tools/bin:$PATH
+export PATH=/tools/projects/johnwright/install/bin:$PATH
+export PATH=/tools/projects/johnwright/install/dtc-1.4.4:$PATH
+export PATH=/tools/B/s2/root/bin:$PATH
+
+# Mote ChipYard-required stuff, at least to build toolchains 
+export LD_LIBRARY_PATH=/tools/B/s2/root/lib64:/tools/B/s2/root/lib:$LD_LIBRARY_PATH
+export PKG_CONFIG_PATH=/tools/B/s2/root/lib/pkgconfig:$PKG_CONFIG_PATH
+
+
