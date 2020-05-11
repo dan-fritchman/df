@@ -1,8 +1,5 @@
 
 BANNER="##########################################"
-echo $BANNER
-echo "# Loading ${HOME}/.profile"
-echo $BANNER
 
 # General terminal stuff
 export EDITOR=vim
@@ -29,17 +26,6 @@ alias tmls="tmux ls -F '#{session_name}'"
 alias tmd='tmux detach '
 alias tmk='tmux kill-session -t '
 alias tmks='tmux kill-session -t '
-
-# screen
-##alias scrnns   = 'screen -S '
-##alias scrnS    = 'scrnns'
-##alias scrnls   = 'screen -ls '
-##alias scrna    = 'screen -x '
-##alias scrnx    = 'scrna'
-##alias scrnas   = 'screen -r '
-##alias scrnr    = 'scrnas'
-##alias scrnAS   = 'screen -dRR '
-##alias scrndRR  = 'scrnAS'
 
 
 # Path Additions

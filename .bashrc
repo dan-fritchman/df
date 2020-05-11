@@ -1,8 +1,9 @@
 
 BANNER="##########################################"
-echo $BANNER
-echo "# Loading ${HOME}/.bash_profile"
-echo $BANNER
+if shopt -q login_shell; then
+  echo $BANNER
+  echo "# Loading ${HOME}/.bashrc"
+  echo $BANNER
 
 # Terminal Prompt 
 # No idea how I figured how to do this 
@@ -13,12 +14,15 @@ export PS1="$(tput bold)[\h][\W]$(tput sgr0) $ "
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
+fi
+
 # Path Additions
 
 # Conda
 CONDA_SH=${HOME}/miniconda3/etc/profile.d/conda.sh
-if [ -f ${CONDA_SH} ]; then source ${CONDA_SH};
-else echo "No conda.sh found"; fi
+if [ -f ${CONDA_SH} ]; then 
+  source ${CONDA_SH};
+fi
 
 # From NVM 
 export NVM_DIR="$HOME/.nvm"
@@ -34,6 +38,12 @@ if [ -f '/Users/dan/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/dan/
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Load shell-agnostic stuff
-source ${HOME}/.profile
+if [ -f ${HOME}/.profile ]; then 
+  source ${HOME}/.profile
+fi
+
+if [ -f ${HOME}/.profile.local ]; then 
+  source ${HOME}/.profile.local
+fi
 
 
