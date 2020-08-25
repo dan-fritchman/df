@@ -27,6 +27,10 @@ alias tmd='tmux detach '
 alias tmk='tmux kill-session -t '
 alias tmks='tmux kill-session -t '
 
+# iterm
+alias light='it2setcolor preset "Light Background" '
+alias dark='it2setcolor preset "Smoooooth" '
+alias grey='it2setcolor preset "Rippedcasts" '
 
 # Path Additions
 export PATH=$PATH:${HOME}/.npm/bin/:${HOME}/.cargo/bin
