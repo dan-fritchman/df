@@ -37,3 +37,5 @@ export PATH=$PATH:${HOME}/.npm/bin/:${HOME}/.cargo/bin
 ## source $HOME/.profile.local 
 ##[[ -e ~/.profile.local ]] && emulate sh -c 'source ~/.profile.local'
 
+
+export PATH="$HOME/.cargo/bin:$PATH"
