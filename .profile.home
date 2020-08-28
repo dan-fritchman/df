@@ -1,0 +1,11 @@
+
+# Node v12 
+#export PATH="/usr/local/opt/node@12/bin:$PATH"
+#export LDFLAGS="-L/usr/local/opt/node@12/lib:$LDFLAGS"
+#export CPPFLAGS="-I/usr/local/opt/node@12/include:$CPPFLAGS"
+
+# Node v10 
+export PATH="/usr/local/opt/node@10/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/node@10/lib:$LDFLAGS"
+export CPPFLAGS="-I/usr/local/opt/node@10/include:$CPPFLAGS"
+
