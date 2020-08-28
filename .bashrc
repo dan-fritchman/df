@@ -32,6 +32,6 @@ if [ -f '/Users/dan/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/dan/
 
 # Load shell-agnostic stuff
 # This comes last in case it fails
-if [ -f ${HOME}/.profile ]; then source ${HOME}/.profile fi
-if [ -f ${HOME}/.profile.local ]; then source ${HOME}/.profile.local fi
+if [ -f ${HOME}/.profile ]; then source ${HOME}/.profile; fi
+if [ -f ${HOME}/.profile.local ]; then source ${HOME}/.profile.local; fi
 
