@@ -13,7 +13,7 @@ An attempt to share some dot-files
 ## Install
 
 * `git clone`
-* `python3 ln.py` will (forcibly) sym-link each dotfile into `$HOME`
+* `python3 install.py` will (forcibly) sym-link each dotfile into `$HOME`
 
 ## Supported 
 
