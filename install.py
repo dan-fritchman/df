@@ -7,7 +7,6 @@ from pathlib import Path
 
 dotfiles = [
 	'.profile', 
-	'.zprofile',
 	'.zshrc',
 	'.bashrc',
 	'.vimrc',

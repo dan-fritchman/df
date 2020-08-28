@@ -25,4 +25,3 @@ export PATH=/tools/B/s2/root/bin:$PATH
 export LD_LIBRARY_PATH=/tools/B/s2/root/lib64:/tools/B/s2/root/lib:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=/tools/B/s2/root/lib/pkgconfig:$PKG_CONFIG_PATH
 
-

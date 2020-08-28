@@ -22,12 +22,8 @@ fi # -q login_shell
 CONDA_SH=${HOME}/miniconda3/etc/profile.d/conda.sh
 if [ -f ${CONDA_SH} ]; then source ${CONDA_SH}; fi
 
-# Rust/ Cargo
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# The next line updates PATH for the Google Cloud SDK.
+# Gcloud
 if [ -f '/Users/dan/google-cloud-sdk/path.bash.inc' ]; then . '/Users/dan/google-cloud-sdk/path.bash.inc'; fi
-# The next line enables shell command completion for gcloud.
 if [ -f '/Users/dan/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/dan/google-cloud-sdk/completion.bash.inc'; fi
 
 # Load shell-agnostic stuff

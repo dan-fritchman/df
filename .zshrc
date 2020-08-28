@@ -19,20 +19,21 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
 # Custom Stuff
 bindkey -e
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 export PS1="%10F%m%f:%11F%1~%f \$ "
 
-
-# The next line updates PATH for the Google Cloud SDK.
+# Gcloud
 if [ -f '/Users/dan/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/dan/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
 if [ -f '/Users/dan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/dan/google-cloud-sdk/completion.zsh.inc'; fi
 
 # iTerm Shell Integration 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Load shell-agnostic stuff
+# This comes last in case it fails
+[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
+[[ -e ~/.profile.local ]] && emulate sh -c 'source ~/.profile.local'
 

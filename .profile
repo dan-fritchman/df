@@ -33,9 +33,3 @@ alias grey='it2setcolor preset "Rippedcasts" '
 # Path Additions
 export PATH=$PATH:${HOME}/.npm/bin/:${HOME}/.cargo/bin
 
-# Load local settings, if present
-## source $HOME/.profile.local 
-##[[ -e ~/.profile.local ]] && emulate sh -c 'source ~/.profile.local'
-
-
-export PATH="$HOME/.cargo/bin:$PATH"
