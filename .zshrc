@@ -37,3 +37,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 [[ -e ~/.profile.local ]] && emulate sh -c 'source ~/.profile.local'
 
+# SSH Tunneling. Usage: 
+# tunnel <host> <port>
+tunnel() {
+	ssh -L ${2}:localhost:${2} ${1} -Nf
+}
+
