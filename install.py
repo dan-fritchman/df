@@ -8,7 +8,7 @@ from pathlib import Path
 dotfiles = [
 	'.profile', 
 	'.zshrc',
-	'.bashrc',
+	'.bash_profile',
 	'.vimrc',
 ]
 dotfiles = [Path(d).absolute() for d in dotfiles]
