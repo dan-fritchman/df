@@ -26,7 +26,7 @@ alias tmk='tmux kill-session -t '
 alias tmks='tmux kill-session -t '
 
 # iterm
-alias lite='it2setcolor preset "Light Background" '
+alias lite='it2setcolor preset "Material" '
 alias dark='it2setcolor preset "Smoooooth" '
 alias grey='it2setcolor preset "Rippedcasts" '
 
