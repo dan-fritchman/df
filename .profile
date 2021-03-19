@@ -1,7 +1,6 @@
 
 # General terminal stuff
 export EDITOR=vim
-alias ls='ls -hpG'
 alias ll='ls -alhpG'
 alias la='ls -alhpG'
 alias h='history'
@@ -32,4 +31,6 @@ alias grey='it2setcolor preset "Rippedcasts" '
 
 # Path Additions
 export PATH=$PATH:${HOME}/.npm/bin/:${HOME}/.cargo/bin
+export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
