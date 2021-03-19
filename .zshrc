@@ -32,14 +32,22 @@ if [ -f '/Users/dan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/dan/g
 # iTerm Shell Integration 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# SSH Tunneling
+# Usage: `tunnel <host> <port>`
+# Tunnels `host:port` to `localhost:port`
+tunnel() {
+	ssh -L ${2}:localhost:${2} ${1} -Nf
+}
+
+# JupyterLab as a Chrome App
+# Usage: `jlab <port>`
+jlab() {
+	/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --app=http://localhost:${1}
+}
+
 # Load shell-agnostic stuff
 # This comes last in case it fails
 [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 [[ -e ~/.profile.local ]] && emulate sh -c 'source ~/.profile.local'
 
-# SSH Tunneling. Usage: 
-# tunnel <host> <port>
-tunnel() {
-	ssh -L ${2}:localhost:${2} ${1} -Nf
-}
 
