@@ -1,6 +1,14 @@
 
 # BWRC Machines Local Settings 
 
+# This is "functional home", since /home/ is pretty strictly space-limited 
+export OTHERHOME=/tools/B/dan_fritchman
+# Set the OS .config and .cache directories 
+# Otherwise they also get pretty big 
+# How fast or slow this ends up: remains to be seen. 
+export XDG_CONFIG_HOME=${OTHERHOME}/.config
+export XDG_CACHE_HOME=${OTHERHOME}/.cache
+
 # License Manager 
 source /tools/flexlm/flexlm.sh
 
@@ -8,22 +16,48 @@ source /tools/flexlm/flexlm.sh
 source /tools/support/lsf/conf/profile.lsf
 mybsubbash() { bsub -Is -XF -q interactive "$@" /bin/bash; }
 
-# RedHat DevTools
-source /opt/rh/devtoolset-8/enable
 
 # EDA Tools 
+export VCS_HOME="/tools/synopsys/vcs/current" 
+export VCS_64=1
+export PATH="$PATH:$VCS_HOME/bin"
 export PATH=$PATH:/tools/synopsys/hspice/current/hspice/bin
-export PATH=$PATH:/tools/synopsys/vcs/current/bin
 export PATH=$PATH:/tools/synopsys/wv/current/bin
+export CDS_HOME=/tools/cadence/ICADVM/ICADVM181
+##export PATH=$PATH:/tools/cadence/ICADVM/ICADVM181/tools/dfII/bin # FIXME: want this?
+export PATH=$PATH:/tools/cadence/SPECTRE/SPECTRE191/bin
+export PATH=$PATH:/tools/commercial/integrand/20190322
+##export PATH=$PATH:/tools/mentor/calibre/current/bin
+##export MGC_HOME=/tools/mentor/calibre/current
+
+# Home-Built EDA Tools 
+# LayoutEditor 
+export PATH=$PATH:/tools/B/dan_fritchman/gradware/layout-editor/latest/opt/layout/bin
 
 # ChipYard Requirements
-# The real trick - a mountain of other people's source-build shit 
-export PATH=/tools/designs/palmer.dabbelt/keep/redhat-tools/bin:$PATH
-export PATH=/tools/projects/johnwright/install/bin:$PATH
+# The real trick - a mountain of other people's source-built shit 
 export PATH=/tools/projects/johnwright/install/dtc-1.4.4:$PATH
-export PATH=/tools/B/s2/root/bin:$PATH
+##export PATH=/tools/projects/johnwright/install/bin:$PATH
+##export PATH=/tools/designs/palmer.dabbelt/keep/redhat-tools/bin:$PATH
+##export PATH=/tools/B/s2/root/bin:$PATH
 
 # More ChipYard-required stuff, at least to build toolchains 
-export LD_LIBRARY_PATH=/tools/B/s2/root/lib64:/tools/B/s2/root/lib:$LD_LIBRARY_PATH
-export PKG_CONFIG_PATH=/tools/B/s2/root/lib/pkgconfig:$PKG_CONFIG_PATH
+##export LD_LIBRARY_PATH=/tools/B/s2/root/lib64:/tools/B/s2/root/lib:$LD_LIBRARY_PATH
+##export PKG_CONFIG_PATH=/tools/B/s2/root/lib/pkgconfig:/usr/lib64/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PATH
+
+# Rust/ Rustup/ Cargo 
+export RUSTUP_HOME=${OTHERHOME}/.rustup
+export CARGO_HOME=${OTHERHOME}/.cargo
+source "${CARGO_HOME}/env"
+
+# PyCharm
+export PATH=$PATH:$OTHERHOME/dev/pycharm-2020.2.2/bin
+
+# Verilator
+export PATH=$PATH:$OTHERHOME/verilator/bin
+export VERILATOR_ROOT=${OTHERHOME}/verilator
+
+# RedHat DevTools
+source scl_source enable devtoolset-8 rh-git29 httpd24
+#source /opt/rh/devtoolset-8/enable
 
