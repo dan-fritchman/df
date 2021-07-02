@@ -68,3 +68,7 @@ export VERILATOR_ROOT=${OTHERHOME}/verilator
 source scl_source enable devtoolset-8 rh-git29 httpd24
 #source /opt/rh/devtoolset-8/enable
 
+# Get these ugly ass colors outta here 
+unset LS_COLORS 
+
+
