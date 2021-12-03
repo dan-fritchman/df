@@ -21,8 +21,8 @@ unset __conda_setup
 
 # Custom Stuff
 bindkey -e
-bindkey "^[[A" history-search-backward
-bindkey "^[[B" history-search-forward
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
 export PS1="%10F%m%f:%11F%1~%f \$ "
 
 # Gcloud
@@ -51,3 +51,4 @@ jlab() {
 [[ -e ~/.profile.local ]] && emulate sh -c 'source ~/.profile.local'
 
 
+export PATH="/usr/local/opt/bison/bin:$PATH"
