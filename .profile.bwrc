@@ -3,7 +3,10 @@
 
 # This is "functional home", since /home/ is pretty strictly space-limited 
 export OTHERHOME=/tools/B/dan_fritchman
+
 # I guess there's even more of these
+export TOOLS_B_HOME=/tools/B/dan_fritchman
+export TOOLS_C_HOME=/tools/C/dan_fritchman
 export TOOLS_SCRATCH_HOME=/tools/scratch/dan_fritchman
 export SCRATCH_HOME=/scratch/dan_fritchman
 
@@ -22,13 +25,14 @@ mybsubbash() { bsub -Is -XF -q interactive "$@" /bin/bash; }
 
 
 # EDA Tools 
-export VCS_HOME="/tools/synopsys/vcs/current" 
 export VCS_64=1
-export PATH="$PATH:$VCS_HOME/bin"
+export VCS_VERSION="R-2020.12-SP1-1" # "current" seems broken again as of 9/21 
+export VCS_HOME=/tools/synopsys/vcs/${VCS_VERSION}
+export PATH=$PATH:$VCS_HOME/bin
 export PATH=$PATH:/tools/synopsys/hspice/current/hspice/bin
 export PATH=$PATH:/tools/synopsys/wv/current/bin
 export CDS_HOME=/tools/cadence/ICADVM/ICADVM181
-##export PATH=$PATH:/tools/cadence/ICADVM/ICADVM181/tools/dfII/bin # FIXME: want this?
+##export PATH=$PATH:/tools/cadence/ICADVM/ICADVM181/tools/dfII/bin # FIXME: do I want this?
 export PATH=$PATH:/tools/cadence/SPECTRE/SPECTRE191/bin
 export PATH=$PATH:/tools/commercial/integrand/20190322
 ##export PATH=$PATH:/tools/mentor/calibre/current/bin
