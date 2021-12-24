@@ -3,6 +3,10 @@
 
 # This is "functional home", since /home/ is pretty strictly space-limited 
 export OTHERHOME=/tools/B/dan_fritchman
+# I guess there's even more of these
+export TOOLS_SCRATCH_HOME=/tools/scratch/dan_fritchman
+export SCRATCH_HOME=/scratch/dan_fritchman
+
 # Set the OS .config and .cache directories 
 # Otherwise they also get pretty big 
 # How fast or slow this ends up: remains to be seen. 
@@ -53,6 +57,9 @@ source "${CARGO_HOME}/env"
 # PyCharm
 export PATH=$PATH:$OTHERHOME/dev/pycharm-2020.2.2/bin
 
+# Ngspice
+export PATH=$PATH:$OTHERHOME/gradware/ngspice/debug/install/bin
+
 # Verilator
 export PATH=$PATH:$OTHERHOME/verilator/bin
 export VERILATOR_ROOT=${OTHERHOME}/verilator
@@ -60,4 +67,8 @@ export VERILATOR_ROOT=${OTHERHOME}/verilator
 # RedHat DevTools
 source scl_source enable devtoolset-8 rh-git29 httpd24
 #source /opt/rh/devtoolset-8/enable
+
+# Get these ugly ass colors outta here 
+unset LS_COLORS 
+
 
