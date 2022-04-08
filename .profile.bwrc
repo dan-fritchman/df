@@ -68,3 +68,22 @@ export VERILATOR_ROOT=${OTHERHOME}/verilator
 source scl_source enable devtoolset-8 rh-git29 httpd24
 #source /opt/rh/devtoolset-8/enable
 
+# Conda
+CONDA_SH=${HOME}/miniconda3/etc/profile.d/conda.sh
+if [ -f ${CONDA_SH} ]; then source ${CONDA_SH}; fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/tools/B/dan_fritchman/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/tools/B/dan_fritchman/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/tools/B/dan_fritchman/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/tools/B/dan_fritchman/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
