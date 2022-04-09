@@ -10,6 +10,7 @@ dotfiles = [
 	'.zshrc',
 	'.bash_profile',
 	'.vimrc',
+	'.tmux.conf',
 ]
 dotfiles = [Path(d).absolute() for d in dotfiles]
 
