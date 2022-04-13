@@ -3,7 +3,10 @@
 
 # This is "functional home", since /home/ is pretty strictly space-limited 
 export OTHERHOME=/tools/B/dan_fritchman
+
 # I guess there's even more of these
+export TOOLS_B_HOME=/tools/B/dan_fritchman
+export TOOLS_C_HOME=/tools/C/dan_fritchman
 export TOOLS_SCRATCH_HOME=/tools/scratch/dan_fritchman
 export SCRATCH_HOME=/scratch/dan_fritchman
 
@@ -22,13 +25,14 @@ mybsubbash() { bsub -Is -XF -q interactive "$@" /bin/bash; }
 
 
 # EDA Tools 
-export VCS_HOME="/tools/synopsys/vcs/current" 
 export VCS_64=1
-export PATH="$PATH:$VCS_HOME/bin"
+export VCS_VERSION="R-2020.12-SP1-1" # "current" seems broken again as of 9/21 
+export VCS_HOME=/tools/synopsys/vcs/${VCS_VERSION}
+export PATH=$PATH:$VCS_HOME/bin
 export PATH=$PATH:/tools/synopsys/hspice/current/hspice/bin
 export PATH=$PATH:/tools/synopsys/wv/current/bin
 export CDS_HOME=/tools/cadence/ICADVM/ICADVM181
-##export PATH=$PATH:/tools/cadence/ICADVM/ICADVM181/tools/dfII/bin # FIXME: want this?
+##export PATH=$PATH:/tools/cadence/ICADVM/ICADVM181/tools/dfII/bin # FIXME: do I want this?
 export PATH=$PATH:/tools/cadence/SPECTRE/SPECTRE191/bin
 export PATH=$PATH:/tools/commercial/integrand/20190322
 ##export PATH=$PATH:/tools/mentor/calibre/current/bin
@@ -67,6 +71,25 @@ export VERILATOR_ROOT=${OTHERHOME}/verilator
 # RedHat DevTools
 source scl_source enable devtoolset-8 rh-git29 httpd24
 #source /opt/rh/devtoolset-8/enable
+
+# Conda
+CONDA_SH=${HOME}/miniconda3/etc/profile.d/conda.sh
+if [ -f ${CONDA_SH} ]; then source ${CONDA_SH}; fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/tools/B/dan_fritchman/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/tools/B/dan_fritchman/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/tools/B/dan_fritchman/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/tools/B/dan_fritchman/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
 # Get these ugly ass colors outta here 
 unset LS_COLORS 
