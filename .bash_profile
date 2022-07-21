@@ -55,3 +55,5 @@ if [ -e ${HOME}/.profile.local ]; then source ${HOME}/.profile.local; fi
 
 
 
+
+export PATH="$HOME/.poetry/bin:$PATH"
