@@ -1,0 +1,29 @@
+
+Host * !cory !eda-8 
+  User dan_fritchman
+
+Host eda-8
+  User cs199-clp
+  HostName eda-8.eecs.berkeley.edu
+  ForwardX11Trusted yes
+
+Host cory
+  User cs199-clp
+  HostName cory.eecs.berkeley.edu
+  ForwardX11Trusted yes
+
+Host bwrc-login
+  HostName bwrcrdsl-4.eecs.berkeley.edu
+  ProxyCommand ssh -q -W %h:%p cory 
+  ForwardX11Trusted yes
+
+Host bwrcrepo
+  HostName bwrcrepo.eecs.berkeley.edu
+  #ProxyCommand ssh -q -W %h:%p cory 
+  #ForwardX11Trusted yes
+
+Host bwrc* !bwrc-login !bwrcrepo !bwrcrepo.eecs.berkeley.edu 
+  HostName %h.eecs.berkeley.edu
+  ProxyCommand ssh -q -W %h:%p bwrc-login 
+  ForwardX11Trusted yes
+

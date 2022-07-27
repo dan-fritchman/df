@@ -12,6 +12,13 @@ from pathlib import Path
 class Dotfile:
     local: str
     linkto: Optional[str] = None
+    force: bool = True
+
+    @property 
+    def dest(self):
+        if self.linkto is not None:
+            return self.linkto 
+        return self.local 
 
 
 dotfiles = [
@@ -21,9 +28,11 @@ dotfiles = [
     Dotfile(".vimrc"),
     Dotfile(".tmux.conf"),
     Dotfile(".ssh.config", linkto=".ssh/config"),
+    Dotfile(".ssh.config.bwrc", linkto=".ssh/config.bwrc"),
+    Dotfile(".ssh.config.gcp", linkto=".ssh/config.gcp", force=False),
 ]
 
-here = Path(__file__).parent
+here = Path(__file__).parent.absolute()
 commands: List[str] = []
 
 os.chdir(os.environ["HOME"])
@@ -31,6 +40,9 @@ os.chdir(os.environ["HOME"])
 for d in dotfiles:
     local = here / Path(d.local)
     local = local.absolute()
+    if not d.force:
+        print(f"Skipping {local} - unimplemented `force=False`")
+        continue 
     if d.linkto is not None:
         linkto = Path(d.linkto).absolute()
         commands.append(f"ln -fs {local} {linkto}")
@@ -38,9 +50,10 @@ for d in dotfiles:
         commands.append(f"ln -fs {local}")
 
 # Excecute all those commands. Comment for "dry runs".
+print("Dotfile installation running: ")
 for cmd in commands:
     print(cmd)
-    os.system(cmd)
+    ##os.system(cmd)
 
 # Install some more stuff
 # os.system(f'curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash')
