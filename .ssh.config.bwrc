@@ -1,6 +1,14 @@
 
-Host * !cory !eda-8 
+Host * !aryap_sshboys !cory !eda-8 
   User dan_fritchman
+  ForwardAgent yes
+  ForwardX11 yes
+  ForwardX11Trusted yes
+
+Host aryap_sshboys
+  Hostname aryap.cs.berkeley.edu
+  User sshboys
+  Port 42069
 
 Host eda-8
   User cs199-clp
@@ -12,18 +20,14 @@ Host cory
   HostName cory.eecs.berkeley.edu
   ForwardX11Trusted yes
 
-Host bwrc-login
-  HostName bwrcrdsl-4.eecs.berkeley.edu
-  ProxyCommand ssh -q -W %h:%p cory 
-  ForwardX11Trusted yes
-
-Host bwrcrepo
-  HostName bwrcrepo.eecs.berkeley.edu
-  #ProxyCommand ssh -q -W %h:%p cory 
-  #ForwardX11Trusted yes
-
-Host bwrc* !bwrc-login !bwrcrepo !bwrcrepo.eecs.berkeley.edu 
+# BWRC Login Servers
+Host bwrcrdsl-* !bwrc-login !bwrcrepo !bwrcrepo.eecs.berkeley.edu 
   HostName %h.eecs.berkeley.edu
-  ProxyCommand ssh -q -W %h:%p bwrc-login 
-  ForwardX11Trusted yes
+  ProxyCommand ssh -q -W %h:%p aryap_sshboys
+
+# BWRC Runtime Machines
+# (Double) proxied via login servers
+Host bwrcr* !bwrcrdsl-*
+  HostName %h.eecs.berkeley.edu
+  ProxyCommand ssh -q -W %h:%p bwrcrdsl-4
 

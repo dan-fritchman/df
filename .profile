@@ -35,8 +35,8 @@ alias dark='it2setcolor preset "Smoooooth" '
 alias grey='it2setcolor preset "Rippedcasts" '
 
 # Path Additions
+export PATH=${HOME}/.local/bin:${PATH}
 export PATH=${HOME}/.npm/bin/:${HOME}/.cargo/bin:${PATH}
-export PATH=${HOME}/.poetry/bin:${PATH}
 export PATH=${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin:${PATH}
 
 # Xyce
