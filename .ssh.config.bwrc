@@ -21,13 +21,13 @@ Host cory
   ForwardX11Trusted yes
 
 # BWRC Login Servers
-Host bwrcrdsl-* !bwrc-login !bwrcrepo !bwrcrepo.eecs.berkeley.edu 
+Host bwrcrdsl-* !bwrc-login* !bwrcrepo* !bwrcrepo.eecs.berkeley.edu 
   HostName %h.eecs.berkeley.edu
   ProxyCommand ssh -q -W %h:%p aryap_sshboys
 
 # BWRC Runtime Machines
 # (Double) proxied via login servers
-Host bwrcr* !bwrcrdsl-*
+Host bwrcr* !bwrcrdsl-* !bwrcrrepo* !bwrcrepo.eecs.berkeley.edu 
   HostName %h.eecs.berkeley.edu
   ProxyCommand ssh -q -W %h:%p bwrcrdsl-4
 
