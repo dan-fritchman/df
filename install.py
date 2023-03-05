@@ -27,6 +27,7 @@ dotfiles = [
     Dotfile(".bash_profile"),
     Dotfile(".vimrc"),
     Dotfile(".tmux.conf"),
+    Dotfile(".gitconfig"),
     Dotfile(".ssh.config", linkto=".ssh/config"),
     Dotfile(".ssh.config.bwrc", linkto=".ssh/config.bwrc"),
     Dotfile(".ssh.config.gcp", linkto=".ssh/config.gcp", force=False),
@@ -53,7 +54,7 @@ for d in dotfiles:
 print("Dotfile installation running: ")
 for cmd in commands:
     print(cmd)
-    ##os.system(cmd)
+    os.system(cmd)
 
 # Install some more stuff
 # os.system(f'curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash')
