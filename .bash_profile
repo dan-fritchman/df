@@ -23,7 +23,7 @@ if [ -f '${HOME}/google-cloud-sdk/path.bash.inc' ]; then . '${HOME}/google-cloud
 if [ -f '${HOME}/google-cloud-sdk/completion.bash.inc' ]; then . '${HOME}/google-cloud-sdk/completion.bash.inc'; fi
 
 # Cargo environment 
-if [ -f '${HOME}/.cargo/env']; then . '${HOME}/.cargo/env'; fi
+if [ -f '${HOME}/.cargo/env' ]; then . '${HOME}/.cargo/env'; fi
 
 # Poetry
 export PATH="$HOME/.poetry/bin:$PATH"
