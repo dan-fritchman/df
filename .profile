@@ -40,7 +40,7 @@ export PATH=${HOME}/.npm/bin/:${HOME}/.cargo/bin:${PATH}
 export PATH=${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin:${PATH}
 
 # Xyce
-export XYCE_VERSION="Xyce-Release-7.4.0-NORAD"
+export XYCE_VERSION="Xyce-Release-7.6.0-NORAD"
 export PATH=${PATH}:/usr/local/${XYCE_VERSION}/bin
 
 

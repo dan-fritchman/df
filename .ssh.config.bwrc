@@ -1,14 +1,17 @@
 
-Host * !aryap_sshboys !cory !eda-8 
+Host * !meow !cory !eda-8 
   User dan_fritchman
   ForwardAgent yes
   ForwardX11 yes
   ForwardX11Trusted yes
 
-Host aryap_sshboys
-  Hostname aryap.cs.berkeley.edu
+Host meow
+  Hostname meowmeow.cs.berkeley.edu
   User sshboys
   Port 42069
+  ForwardAgent yes
+  ForwardX11 yes
+  ForwardX11Trusted yes
 
 Host eda-8
   User cs199-clp
@@ -23,7 +26,7 @@ Host cory
 # BWRC Login Servers
 Host bwrcrdsl-* !bwrc-login* !bwrcrepo* !bwrcrepo.eecs.berkeley.edu 
   HostName %h.eecs.berkeley.edu
-  ProxyCommand ssh -q -W %h:%p aryap_sshboys
+  ProxyCommand ssh -q -W %h:%p meow
 
 # BWRC Runtime Machines
 # (Double) proxied via login servers
