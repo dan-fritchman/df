@@ -32,5 +32,5 @@ Host bwrcrdsl-* !bwrc-login* !bwrcrepo* !bwrcrepo.eecs.berkeley.edu
 # (Double) proxied via login servers
 Host bwrcr* !bwrcrdsl-* !bwrcrrepo* !bwrcrepo.eecs.berkeley.edu 
   HostName %h.eecs.berkeley.edu
-  ProxyCommand ssh -q -W %h:%p bwrcrdsl-4
+  ProxyCommand ssh -q -W %h:%p bwrcrdsl-1
 
