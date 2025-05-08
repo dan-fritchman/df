@@ -9,8 +9,8 @@ email = dan@fritch.mn
 	required = true
 	clean = git-lfs clean -- %f
 
-[pull]
-	ff = only
+##[pull]
+##	ff = only
 
 [init]
 	defaultBranch = main
