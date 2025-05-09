@@ -7,14 +7,30 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "assistant": {
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
-    },
-    "version": "2"
-  },
   "ui_font_size": 16,
-  "buffer_font_size": 16,
-  "cursor_shape": "bar"
+  "buffer_font_size": 12,
+  "cursor_shape": "bar",
+  "ssh_connections": [
+    {
+      "host": "instance-3.us-central1-a.generation-alpha-transistor",
+      "username": "dan",
+      "projects": [
+        {
+          "paths": ["~/otherhome"]
+        },
+        {
+          "paths": ["~/otherhome/GenAlphaPrivate"]
+        }
+      ]
+    }
+  ],
+  "terminal": { "dock": "right" },
+  "assistant": {
+    "version": "2",
+    "always_allow_tool_actions": true,
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-latest"
+    }
+  }
 }

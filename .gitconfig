@@ -14,3 +14,5 @@ email = dan@fritch.mn
 
 [init]
 	defaultBranch = main
+[push]
+	autoSetupRemote = true
