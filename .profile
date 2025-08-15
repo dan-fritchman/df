@@ -43,4 +43,5 @@ export PATH=${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin:${PA
 alias co="code"
 alias ci="code-insiders"
 alias cu="cursor"
+alias wi="windsurf"
 alias z="zed"
