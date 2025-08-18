@@ -45,3 +45,14 @@ alias ci="code-insiders"
 alias cu="cursor"
 alias wi="windsurf"
 alias z="zed"
+
+# Git utilities
+gitstat() {
+  for dir in */; do
+    if [ -d "$dir/.git" ]; then
+      branch=$(git -C "$dir" branch --show-current)
+      echo "$dir: $branch"
+    fi
+  done
+}
+alias gs='gitstat'
