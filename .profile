@@ -5,7 +5,6 @@
 # ##########################################
 
 # General terminal stuff
-export EDITOR=vim
 alias ll='ls -alhpG'
 alias la='ls -alhpG'
 alias h='history'
@@ -35,11 +34,35 @@ alias dark='it2setcolor preset "Smoooooth" '
 alias grey='it2setcolor preset "Rippedcasts" '
 
 # Path Additions
-export PATH=${HOME}/.local/bin:${PATH}
-export PATH=${HOME}/.npm/bin/:${HOME}/.cargo/bin:${PATH}
-export PATH=${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin:${PATH}
+paths=(
+    ${HOME}/.local/bin
+    ${HOME}/.npm/bin
+    ${HOME}/.cargo/bin
+    ${HOME}/.yarn/bin
+    ${HOME}/.codeium/windsurf/bin
+    ${HOME}/.config/yarn/global/node_modules/.binn
+    /opt/homebrew/opt/node@20/bin
+    /opt/homebrew/opt/libpq/bin
+)
+for path in ${paths[@]}; do
+    if [ -d "$path" ]; then
+        export PATH=$path:$PATH
+    fi
+done
 
-# IDE 
+# Homebrew's advice for node@20, postgres, other stuff requiring compiler flags
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/libpq/include"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/openssl@3/include"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/node@20/include"
+
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH /opt/homebrew/opt/libpq/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH /opt/homebrew/opt/openssl@3/lib/pkgconfig"
+
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/libpq/lib"
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/openssl@3/lib"
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/node@20/lib"
+
+# IDEs 
 alias co="code"
 alias ci="code-insiders"
 alias cu="cursor"
