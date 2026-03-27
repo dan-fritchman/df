@@ -33,6 +33,7 @@ dotfiles = [
     Dotfile(".ssh.config.gcp", linkto=".ssh/config.gcp", force=False),
     Dotfile(".ssh.config.genalpha", linkto=".ssh/config.genalpha", force=False),
     Dotfile("zed.settings.json", linkto=".config/zed/settings.json"),
+    Dotfile("claude.settings.json", linkto=".claude/settings.json"),
 ]
 
 here = Path(__file__).parent.absolute()
