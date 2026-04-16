@@ -41,7 +41,7 @@ paths=(
     ${HOME}/.yarn/bin
     ${HOME}/.codeium/windsurf/bin
     ${HOME}/.config/yarn/global/node_modules/.binn
-    /opt/homebrew/opt/node@20/bin
+    /opt/homebrew/opt/node@24/bin
     /opt/homebrew/opt/libpq/bin
 )
 for path in ${paths[@]}; do
@@ -50,17 +50,17 @@ for path in ${paths[@]}; do
     fi
 done
 
-# Homebrew's advice for node@20, postgres, other stuff requiring compiler flags
+# Homebrew's advice for node@24, postgres, other stuff requiring compiler flags
 export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/libpq/include"
 export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/openssl@3/include"
-export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/node@20/include"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/node@24/include"
 
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH /opt/homebrew/opt/libpq/lib/pkgconfig"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH /opt/homebrew/opt/openssl@3/lib/pkgconfig"
 
 export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/libpq/lib"
 export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/openssl@3/lib"
-export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/node@20/lib"
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/node@24/lib"
 
 # IDEs 
 alias co="code"
