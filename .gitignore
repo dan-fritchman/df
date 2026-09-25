@@ -88,3 +88,6 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# SSH config is machine-local and managed by gcloud; not tracked here
+.ssh.config*

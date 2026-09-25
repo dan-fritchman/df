@@ -80,3 +80,14 @@ gitstat() {
   done
 }
 alias gs='gitstat'
+
+# gcloud login we have to do every day, i guess
+alias gc='gcloud auth login --update-adc'
+
+# df1 agent fleet: SSH over IAP + iTerm2 tmux integration
+alias df1='ssh -t df1 "tmux attach -t agents"'
+alias agents='df1'
+# danbox: Dan's cloud laptop (genalpha-danbox). SSH over IAP (OS Login 2FA on first connect;
+# ControlMaster keeps it alive 12h) and attach the `danbox` tmux session (window 0 = claude).
+alias danbox='ssh -t danbox "tmux attach -t danbox"'
+

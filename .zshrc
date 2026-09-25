@@ -43,3 +43,4 @@ tunnel() {
 [[ -e ~/.profile.local ]] && emulate sh -c 'source ~/.profile.local'
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
