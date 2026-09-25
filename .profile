@@ -68,6 +68,7 @@ alias ci="code-insiders"
 alias cu="cursor"
 alias wi="windsurf"
 alias z="zed"
+alias codex="codex --dangerously-bypass-approvals-and-sandbox --dangerously-bypass-hook-trust"
 
 # Git utilities
 gitstat() {
